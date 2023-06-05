@@ -18,8 +18,8 @@ export function containsDuplicate1(nums: number[]): boolean {
 
 /**
  *
- * Time Complexity:
- * Space Complexity:
+ * Time Complexity: O(Nlog(N))
+ * Space Complexity: O(1)
  *
  */
 export function containsDuplicate2(nums: number[]): boolean {
@@ -29,6 +29,24 @@ export function containsDuplicate2(nums: number[]): boolean {
     let next = current + 1;
     if (nums[current] === nums[next]) {
       return true;
+    }
+  }
+
+  return false;
+}
+
+/**
+ *
+ * Time Complexity: O(N^2)
+ * Space Complexity: O(1)
+ *
+ */
+export function containsDuplicate3(nums: number[]): boolean {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] === nums[j]) {
+        return true;
+      }
     }
   }
 
