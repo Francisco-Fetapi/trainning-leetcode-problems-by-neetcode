@@ -1,13 +1,11 @@
 import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import { setupCounter } from "./counter";
-import { groupAnagrams } from "./arrays_and_hash/groupAnagrams";
+import { topKFrequents } from "./arrays_and_hash/topKFrequents";
 
-const case1 = ["eat", "tea", "tan", "ate", "nat", "bat"];
-const res = groupAnagrams(case1);
+const res = topKFrequents([1, 1, 1, 2, 2, 3, 5, 5, 5, 5], 2);
 
 console.log(res);
-
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
