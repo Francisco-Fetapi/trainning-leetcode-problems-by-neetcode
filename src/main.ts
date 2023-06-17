@@ -1,18 +1,12 @@
 import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import { setupCounter } from "./counter";
+import { groupAnagrams } from "./arrays_and_hash/groupAnagrams";
 
-async function* count(from: number, to: number) {
-  for (let current = from; current <= to; current++) {
-    await new Promise((res) => setTimeout(res, 1000));
+const case1 = ["eat", "tea", "tan", "ate", "nat", "bat"];
+const res = groupAnagrams(case1);
 
-    yield current;
-  }
-}
-
-for await (let value of count(1, 5)) {
-  console.log(value);
-}
+console.log(res);
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
